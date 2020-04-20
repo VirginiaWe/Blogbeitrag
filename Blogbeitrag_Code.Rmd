@@ -21,11 +21,14 @@ rm(list = ls())
 
 
 # Library
-
+library(dplyr)
 ```
 
 ```{r data.import}
-data <- load("/Users/virginia/Desktop/Blogbeitrag/NR_SR_Jan_Okt_2019.RData")
+load("/Users/virginia/Desktop/Blogbeitrag/NR_SR_Jan_Okt_2019.RData")
+
+# Variables in the data set
+names(NR_SR_Jan_Okt_2019)
 ```
 <style>
 div.blue { background-color:#edeef0; border-radius: 5px; padding: 20px;}
@@ -44,12 +47,46 @@ Abgabedatum:
 
 ## General differences between genders on Twitter
 
-### Number of users by gender
+### Preparing the data
 ```{r}
+### Reshuffle parties 
+NR_SR_Jan_Okt_2019$Party_Short[NR_SR_Jan_Okt_2019$Party_Short=="JCVP"] <- "CVP"
+NR_SR_Jan_Okt_2019$Party_Short[NR_SR_Jan_Okt_2019$Party_Short=="jf"] <- "FDP"
+NR_SR_Jan_Okt_2019$Party_Short[NR_SR_Jan_Okt_2019$Party_Short=="jglp"] <- "glp"
+NR_SR_Jan_Okt_2019$Party_Short[NR_SR_Jan_Okt_2019$Party_Short=="JG"] <- "Grüne"
+NR_SR_Jan_Okt_2019$Party_Short[NR_SR_Jan_Okt_2019$Party_Short=="JUSO"] <- "SP"
+NR_SR_Jan_Okt_2019$Party_Short[NR_SR_Jan_Okt_2019$Party_Short=="JSVP"] <- "SVP"
+
+## Filter parties
+data <- NR_SR_Jan_Okt_2019 %>% 
+  filter(Party_Short %in% c("CVP", "FDP", "glp", "Grüne", "SP", "SVP")) 
+```
+
+
+### Number of users 
+```{r}
+# by gender
+data %>% 
+  filter(Gender %in% c("m", "f")) %>%
+  group_by(Gender) %>%
+  tally() %>%
+  arrange(desc(n))
+
+# by gender and party
+data %>% 
+  filter(Gender %in% c("m", "f")) %>%
+  group_by(Gender, Party) %>%
+  tally() %>%
+  arrange(desc(n))
 
 ```
 
 ### Number of tweets by gender
+```{r}
+
+```
+
+### Number of followers by gender
 ```{r}
 
 ```
@@ -90,6 +127,15 @@ Abgabedatum:
 
 ```
 
+### Number of answers
+```{r}
+
+# Number of answers by gender
+
+# Reply ratio
+
+```
+
 ### Rhetorical share of the conversation
 #### What are the candidates abilities to drive the conversation within the networks of people talking about them?
 
@@ -102,5 +148,8 @@ $$ rethorical\; share  = - \frac {C_t + C_{rt}}{Total\; n}  $$
 
 ### Centrality
 ```{r}
+
+# Eigenvektor centrality (= linked to power)
+## = how connected is a node to toher nodes in the network with the greatest connectivity?
 
 ```
