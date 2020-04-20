@@ -1,0 +1,46 @@
+---
+title: "Diskriminierung auf Twitter - Code"
+output: 
+  html_document:
+    theme: cosmo
+urlcolor: black
+linkcolor: black
+---
+```{r setup, echo=FALSE}
+# Setup
+knitr::opts_chunk$set(collapse = TRUE)
+knitr::opts_chunk$set(tidy = TRUE)
+knitr::opts_chunk$set(echo = FALSE) 
+knitr::opts_chunk$set(warning = FALSE) 
+knitr::opts_chunk$set(message = FALSE) 
+knitr::opts_chunk$set(fig.pos = 'H')
+```
+
+```{r library, echo=FALSE}
+rm(list = ls())
+
+
+# Library
+
+```
+
+```{r data.import}
+
+```
+
+<style>
+div.blue { background-color:#edeef0; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+Name: Virginia Wenger  
+Matrikelnummer: 15-102-239  
+E-Mail: [virginia.wenger@uzh.ch](mailto:virginia.wenger@uzh.ch)  
+
+Seminar: Politischer Datenjournalismus (HS 2020)  
+Leitung: Theresa Gessler, Fabrizio Gilardi, Alexandra Kohler  
+Abgabedatum:  
+
+</div>
+
+
