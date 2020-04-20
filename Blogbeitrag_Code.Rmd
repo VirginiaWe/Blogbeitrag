@@ -25,9 +25,8 @@ rm(list = ls())
 ```
 
 ```{r data.import}
-data <- use()
+data <- load("/Users/virginia/Desktop/Blogbeitrag/NR_SR_Jan_Okt_2019.RData")
 ```
-
 <style>
 div.blue { background-color:#edeef0; border-radius: 5px; padding: 20px;}
 </style>
@@ -43,4 +42,65 @@ Abgabedatum:
 
 </div>
 
+## General differences between genders on Twitter
 
+### Number of users by gender
+```{r}
+
+```
+
+### Number of tweets by gender
+```{r}
+
+```
+
+### Number of retweets by gender
+```{r}
+# by gender
+
+# by party and gender
+
+# Who retweets whom?
+
+## retweets of men by men
+
+## retweets of men by women
+
+## retweets of women by men
+
+## retweets of women by women
+
+```
+
+### Number of mentions
+```{r}
+# mentions by gender
+
+# mentions by gender and party
+
+# Who mentions whom?
+
+## mentions of men by men
+
+## mentions of men by women
+
+## mentions of women by men
+
+## mentions of women by women
+
+```
+
+### Rhetorical share of the conversation
+#### What are the candidates abilities to drive the conversation within the networks of people talking about them?
+
+The rethorical share is thenumber of tweets from a candidate plus number of times a candidate was retweeted divided throutg the total number of tweets in the network.
+
+$$ rethorical\; share  = - \frac {C_t + C_{rt}}{Total\; n}  $$
+```{r}
+
+```
+
+### Centrality
+```{r}
+
+```
