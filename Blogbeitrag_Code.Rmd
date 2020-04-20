@@ -1,5 +1,5 @@
 ---
-title: "Diskriminierung auf Twitter _ test"
+title: "Diskriminierung auf Twitter"
 output: 
   html_document:
     theme: cosmo
